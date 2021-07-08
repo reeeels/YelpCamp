@@ -1,15 +1,29 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">YelpCamp</a>
+        <a class="navbar-brand fs-4" href="">YelpCamp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse mt-2" id="navbarText">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/campgrounds/new">Add New</a>
+                </li>
+            </ul>
             <div class="navbar-nav">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/campgrounds">Campgrounds</a>
-                <a class="nav-link" href="/campgrounds/new">Add New</a>
+                <% if(!currentUser) {%>
+                    <a class='nav-link' href="/login">Login</a>
+                    <a class='nav-link' href="/signup">Sign Up</a>
+                    <% } else {%>
+                        <a class='nav-link' href="/logout">LogOut</a>
+                        <% } %>
             </div>
         </div>
     </div>
